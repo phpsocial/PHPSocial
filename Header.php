@@ -30,7 +30,6 @@ include dirname(__FILE__) . "/include/Actions.class.php";
 include dirname(__FILE__) . "/include/General.functions.php";
 include dirname(__FILE__) . "/include/Email.functions.php";
 include dirname(__FILE__) . "/include/Stats.functions.php";
-require_once dirname(__FILE__) . '/include/License.class.php';
 
 $database = new PHPS_Database($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
@@ -40,19 +39,6 @@ $setting = $database->database_fetch_assoc($database->database_query("SELECT * F
 // include language file
 
 $global_lang = $setting[setting_lang_default];
-
-
-$license = new License();
-$license->setLicFilePath(dirname(__FILE__) . '/include/');
-//check the license
-if(!$license->check()) {
-	$page = "Error";
-    $smarty->assign('error_header', $Application[736]);
-    $smarty->assign('error_message', $Application[737]);
-    $smarty->assign('error_submit', $Application[738]);
-	  require_once "Footer.php";
-    exit();
-}
 
 // if GD is not enabled - turn off image verification
 if(!is_callable('gd_info')) {
