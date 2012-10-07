@@ -1,0 +1,3 @@
+[13-Feb-2007 13:17:34] PHP Warning:  main(../include/charts/charts.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/webligo2/public_html/socialengine/include/charts/sample.php on line 4
+[13-Feb-2007 13:17:34] PHP Warning:  main() [<a href='function.include'>function.include</a>]: Failed opening '../include/charts/charts.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/webligo2/public_html/socialengine/include/charts/sample.php on line 4
+[13-Feb-2007 13:17:34] PHP Fatal error:  Call to undefined function:  sendchartdata() in /home/webligo2/public_html/socialengine/include/charts/sample.php on line 30
